@@ -19,6 +19,13 @@ tel.oninput = function () {
   if (telRegex.test(tel.value)) telError.textContent = "";
   else telError.textContent = "Mobile No. is Incorrect";
 };
+//Password validation
+const pwdError = document.querySelector(".pwd-error");
+pwd.oninput = function () {
+  let pwdRegex = RegExp("^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$");
+  if (pwdRegex.test(pwd.value)) pwdError.textContent = "";
+  else pwdError.textContent = "Enter a valid Password";
+};
 //salary validation
 const salary = document.querySelector("#salary");
 const output = document.querySelector(".salary-output");
