@@ -8,11 +8,16 @@ text.oninput = function () {
 //email validation
 const emailError = document.querySelector(".email-error");
 email.oninput = function () {
-  let emailRegex = RegExp(
-    "^[a-zA-Z0-9-_+]+(\\.?[a-zA-Z0-9-_]+)@[a-zA-Z0-9-_]+\\.[a-zA-Z]{2,}(\\.?[a-zA-Z-_]+)$"
-  );
+  let emailRegex = RegExp("^[a-zA-Z0-9-_+]+(\\.?[a-zA-Z0-9-_]+)@[a-zA-Z0-9-_]+\\.[a-zA-Z]{2,}(\\.?[a-zA-Z-_]+)$");
   if (emailRegex.test(email.value)) emailError.textContent = "";
   else emailError.textContent = "Email is Incorrect";
+};
+//Mobile Number validation
+const telError = document.querySelector(".tel-error");
+tel.oninput = function () {
+  let telRegex = RegExp("^91 [1-9][0-9]{9}$");
+  if (telRegex.test(tel.value)) telError.textContent = "";
+  else telError.textContent = "Mobile No. is Incorrect";
 };
 //salary validation
 const salary = document.querySelector("#salary");
